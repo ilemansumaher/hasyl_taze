@@ -6,33 +6,53 @@ import 'package:hasyl2/screens/settings/setting_screen.dart';
 import 'package:hasyl2/screens/singin/sing_in_screen.dart';
 
 var renk = Color.fromRGBO(64, 191, 255, 1);
-var screens=[HomeScreen(),SendCotton(),SettingScreen()];
+var screens = [HomeScreen(), SendCotton(), SettingScreen()];
+
 class MainScreen extends StatefulWidget {
   @override
   State<MainScreen> createState() => _MainScreenState();
 }
 
 class _MainScreenState extends State<MainScreen> {
-   int currentPageIndex = 0;
+  int currentPageIndex = 0;
 
   NavigationDestinationLabelBehavior labelBehavior =
-      NavigationDestinationLabelBehavior.alwaysShow;
+      NavigationDestinationLabelBehavior.onlyShowSelected;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: renk,
-        actions: [TextButton(onPressed: () {
-          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => SingInScreen(),), (route) => false,);
-        }, child: Text("Sing in",style: TextStyle(color: Colors.white),))],
-        leading: Icon(Icons.construction_outlined),
+        actions: [
+          TextButton(
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SingInScreen(),
+                  ),
+                  (route) => false,
+                );
+              },
+              child: Text(
+                "Sing in",
+                style: TextStyle(color: Colors.white),
+              ))
+        ],
+        leading: Padding(
+          padding:const EdgeInsets.all(5),
+          child: Image.network(
+            "https://cdn-icons-png.flaticon.com/512/3174/3174960.png",
+          ),
+        ),
       ),
       body: screens[currentPageIndex],
       bottomNavigationBar: NavigationBar(
         backgroundColor: renk,
         labelBehavior: labelBehavior,
         selectedIndex: currentPageIndex,
+        indicatorColor: Color.fromARGB(255, 174, 195, 228),
         onDestinationSelected: (int index) {
           setState(() {
             currentPageIndex = index;
@@ -43,7 +63,6 @@ class _MainScreenState extends State<MainScreen> {
             icon: Icon(Icons.home),
             label: 'Explore',
           ),
-          
           NavigationDestination(
             // selectedIcon: Icon(Icons.bookmark),
             icon: Icon(Icons.bookmark),
@@ -51,7 +70,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
           NavigationDestination(
             // selectedIcon: Icon(Icons.bookmark),
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.settings,),
             label: 'Setting',
           ),
         ],
