@@ -1,0 +1,5 @@
+package com.example.hasyl2
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity()
