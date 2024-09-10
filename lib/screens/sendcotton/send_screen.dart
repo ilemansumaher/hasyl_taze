@@ -5,6 +5,18 @@ class SendCotton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("Send screen");
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.9,
+          child: const Text(
+            "Siz bu bolimden agza bolanynyzdan son peydalanyp bilersiniz",
+            softWrap: true,
+          ),
+        )
+      ],
+    );
   }
 }

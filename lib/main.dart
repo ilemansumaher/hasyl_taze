@@ -3,7 +3,8 @@ import 'package:hasyl2/screens/mainscreen/main_screen.dart';
 import 'package:hasyl2/screens/singin/sing_in_screen.dart';
 
 void main(List<String> args) {
-  runApp(MyApp());
+  runApp(const MyApp());
+
 }
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -15,8 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: "/",
       routes: {
-        '/':(context)=> MainScreen(),
-        '/singin':(context)=>SingInScreen(),
+        '/':(context)=>const MainScreen(),
+        '/singin':(context)=>const SingInScreen(),
       },
     );
   }

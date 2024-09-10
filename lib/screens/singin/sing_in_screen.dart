@@ -19,12 +19,12 @@ class SingInScreen extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pushAndRemoveUntil(
                 MaterialPageRoute(
-                  builder: (context) => MainScreen(),
+                  builder: (context) =>const MainScreen(),
                 ),
                 (route) => false,
               );
             },
-            child: Text(
+            child:const Text(
               "Bash sahypa",
               style: TextStyle(color: Colors.white),
             ),
