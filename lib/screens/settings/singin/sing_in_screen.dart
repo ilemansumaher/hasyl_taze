@@ -13,7 +13,7 @@ class SingInScreen extends StatelessWidget {
           padding: const EdgeInsets.all(5.0),
           child: Image.network("https://cdn-icons-png.flaticon.com/512/3174/3174960.png"),
         ),
-        backgroundColor: renk,
+        // backgroundColor: renk,
         actions: [
           TextButton(
             onPressed: () {

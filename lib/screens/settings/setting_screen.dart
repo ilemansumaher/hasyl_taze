@@ -25,7 +25,7 @@ class _SettingScreenState extends State<SettingScreen> {
           leading: Switch(
             // thumb color (round icon)
             activeColor:const Color.fromARGB(255, 255, 255, 255),
-            activeTrackColor: renk,
+            // activeTrackColor: renk,
             inactiveThumbColor:const Color.fromARGB(255, 255, 255, 255),
             inactiveTrackColor: const Color.fromARGB(255, 133, 133, 133),
             splashRadius: 50.0,

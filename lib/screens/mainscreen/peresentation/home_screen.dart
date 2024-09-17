@@ -1,57 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:hasyl2/screens/mainscreen/peresentation/ecenom_news.dart';
-import 'package:hasyl2/screens/mainscreen/peresentation/news_part.dart';
-import 'package:hasyl2/screens/settings/setting_screen.dart';
+import 'package:flutter/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        children: [
-          SizedBox(
-            height: 40,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.all(3),
-              children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text("Umumy"),
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            children: [
+              Padding(
+                padding:const EdgeInsets.symmetric(horizontal: 8.0),
+                child: SizedBox(
+                  height: 135,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      for (int i = 0; i < 5; i++)
+                        Container(
+                          margin: const EdgeInsets.all(5),
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(6.0),
+                            onTap: () {},
+                            child: Column(
+                              children: [
+                                Image.network(
+                                    fit: BoxFit.contain,
+                                    height: 104,
+                                    width: 104,
+                                    "https://upload.wikimedia.org/wikipedia/commons/4/41/India_Farming.jpg"),
+                                Text("Buy Product")
+                              ],
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
                 ),
-                const SizedBox(
-                  width: 5,
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text("Pagta"),
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text("Bugday"),
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text("Gayry ekinler"),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
-          for (int i = 0; i < 5; i++)
-            SizedBox(
-              child: forAndroid ?const NewsPart() : const EcenomeNews(),
-            ),
-        ],
-      ),
+        )
+      ],
     );
   }
 }
