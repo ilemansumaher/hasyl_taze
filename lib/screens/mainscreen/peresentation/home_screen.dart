@@ -12,6 +12,32 @@ class HomeScreen extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: CustomScrollView(
         slivers: [
+          SliverAppBar(
+            title: Column(
+              children: [
+                Row(
+                  children: [
+                    CircleAvatar(
+                      child: Image.asset("assets/images/avatar.png"),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 40,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.search),
+                      contentPadding: const EdgeInsets.all(5),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black54),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
           SliverList(
             delegate: SliverChildListDelegate(
               [
@@ -38,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                     },
                   ),
                 ),
-               const Column(
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     BannerImage(),

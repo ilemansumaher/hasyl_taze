@@ -29,29 +29,6 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.lerp(
-            Colors.green, const Color.fromARGB(255, 179, 236, 181), 100),
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SingInScreen(),
-                  ),
-                  (route) => false,
-                );
-              },
-              icon:const Icon(Icons.notifications))
-        ],
-        leading: Padding(
-          padding: const EdgeInsets.all(5),
-          child: Image.network(
-            "https://cdn-icons-png.flaticon.com/512/3174/3174960.png",
-          ),
-        ),
-      ),
       body: PageView(
         controller: _pageController,
         onPageChanged: (value) {
