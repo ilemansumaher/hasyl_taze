@@ -33,7 +33,7 @@ class _MainScreenState extends State<MainScreen> {
         backgroundColor: Color.lerp(
             Colors.green, const Color.fromARGB(255, 179, 236, 181), 100),
         actions: [
-          TextButton(
+          IconButton(
               onPressed: () {
                 Navigator.pushAndRemoveUntil(
                   context,
@@ -43,11 +43,7 @@ class _MainScreenState extends State<MainScreen> {
                   (route) => false,
                 );
               },
-              child: const Text(
-                "Sing in",
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              ))
+              icon:const Icon(Icons.notifications))
         ],
         leading: Padding(
           padding: const EdgeInsets.all(5),
