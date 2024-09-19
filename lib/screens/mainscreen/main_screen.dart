@@ -4,7 +4,6 @@ import 'package:hasyl2/screens/mainscreen/peresentation/home_screen.dart';
 import 'package:hasyl2/screens/mytask/peresentation/task_screen.dart';
 import 'package:hasyl2/screens/sendcotton/send_screen.dart';
 import 'package:hasyl2/screens/settings/setting_screen.dart';
-import 'package:hasyl2/screens/settings/singin/sing_in_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
