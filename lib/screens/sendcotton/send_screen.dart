@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:hasyl2/screens/mainscreen/peresentation/categorycards/category_cards.dart';
+import 'package:hasyl2/screens/sendcotton/peresentation/category_cards.dart';
+import 'package:hasyl2/screens/utils/app_bar.dart';
 
 class SendCotton extends StatelessWidget {
   const SendCotton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        SizedBox(
-          width: MediaQuery.of(context).size.width * 0.9,
-          child: const Text(
-            "Siz bu bolimden agza bolanynyzdan son peydalanyp bilersiniz",
-            softWrap: true,
+    return CustomScrollView(
+      slivers: [
+        const SliverAppB(),
+        SliverList(
+          delegate: SliverChildListDelegate(
+            [
+             const Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: CategoryProcts(),
+              ),
+            ],
           ),
-        )
+        ),
       ],
     );
   }

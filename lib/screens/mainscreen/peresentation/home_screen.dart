@@ -5,16 +5,16 @@ import 'package:hasyl2/screens/mainscreen/peresentation/categorycards/category_c
 import 'package:hasyl2/screens/utils/app_bar.dart';
 
 class HomeScreen extends StatelessWidget {
- const  HomeScreen({super.key});
-   Widget build(BuildContext context) {
+  const HomeScreen({super.key});
+  Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-      const  SliverAppB(),
+        const SliverAppB(),
         SliverList(
           delegate: SliverChildListDelegate(
             [
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(12.0),
                 child: SizedBox(
                   width: double.infinity,
                   height: 300,
@@ -39,9 +39,9 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-             const Padding(
-                padding:  EdgeInsets.all(8.0),
-                child:  Column(
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     BannerImage(),
@@ -66,5 +66,4 @@ class HomeScreen extends StatelessWidget {
       ],
     );
   }
-
 }
