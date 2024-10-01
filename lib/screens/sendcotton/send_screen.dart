@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hasyl2/screens/mainscreen/peresentation/categorycards/banner_image.dart';
 import 'package:hasyl2/screens/mainscreen/peresentation/categorycards/category_cards.dart';
 import 'package:hasyl2/screens/sendcotton/peresentation/category_cards.dart';
 import 'package:hasyl2/screens/utils/app_bar.dart';
@@ -15,6 +16,10 @@ class SendCotton extends StatelessWidget {
           delegate: SliverChildListDelegate(
             [
               CategoryProcts(),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: BannerImage(),
+              ),
             ],
           ),
         ),
