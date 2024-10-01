@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 class CategoryProcts extends StatelessWidget {
+  const CategoryProcts({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration:const BoxDecoration(
               border: Border(
                 top: BorderSide(color: Colors.black54),
                 left: BorderSide(color: Colors.black54),
@@ -36,7 +38,7 @@ class CategoryProcts extends StatelessWidget {
               border: Border.all(
                 color: Colors.black54,
               ),
-              borderRadius: BorderRadius.vertical(
+              borderRadius: const BorderRadius.vertical(
                 bottom: Radius.circular(12.0),
               ),
             ),
@@ -61,7 +63,7 @@ class CategoryProcts extends StatelessWidget {
 class CardReady extends StatelessWidget {
   bool? rightBorder;
   bool? leftBorder;
-  CardReady(this.rightBorder, this.leftBorder);
+  CardReady(this.rightBorder, this.leftBorder, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -69,16 +71,16 @@ class CardReady extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border(
           right: rightBorder == true
-              ? BorderSide(color: Colors.black54)
+              ? const BorderSide(color: Colors.black54)
               : BorderSide.none,
           left: leftBorder == true
-              ? BorderSide(color: Colors.black54)
+              ? const BorderSide(color: Colors.black54)
               : BorderSide.none,
         ),
       ),
       height: 90,
       width: MediaQuery.of(context).size.width * 0.23,
-      child: Column(
+      child:const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
