@@ -14,10 +14,7 @@ class SendCotton extends StatelessWidget {
         SliverList(
           delegate: SliverChildListDelegate(
             [
-             const Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: CategoryProcts(),
-              ),
+              CategoryProcts(),
             ],
           ),
         ),
