@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hasyl2/screens/sendcotton/more_category/moreCategory.dart';
 
 class CategoryProcts extends StatelessWidget {
   const CategoryProcts({super.key});
@@ -26,18 +27,26 @@ class CategoryProcts extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CardReady(true, false, setIcon: Icons.alarm_add),
                 CardReady(
+                  nothinHas,
                   true,
                   false,
                   setIcon: Icons.alarm_add,
                 ),
                 CardReady(
+                  nothinHas,
                   true,
                   false,
                   setIcon: Icons.alarm_add,
                 ),
                 CardReady(
+                  nothinHas,
+                  true,
+                  false,
+                  setIcon: Icons.alarm_add,
+                ),
+                CardReady(
+                  nothinHas,
                   false,
                   false,
                   setIcon: Icons.alarm_add,
@@ -59,22 +68,28 @@ class CategoryProcts extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CardReady(
+                  nothinHas,
                   true,
                   false,
                   setIcon: Icons.abc,
                 ),
                 CardReady(
+                  nothinHas,
                   true,
                   false,
                   setIcon: Icons.ac_unit_sharp,
                 ),
                 CardReady(
+                  () {
+                    nothinHas();
+                  },
                   true,
                   false,
                   setIcon: Icons.ac_unit_sharp,
                 ),
-                CardReady(false, false,
-                    setIcon: Icons.arrow_circle_right_rounded),
+                CardReady(() {
+                  changeScreen(context);
+                }, false, false, setIcon: Icons.arrow_circle_right_rounded),
               ],
             ),
           ),
@@ -89,7 +104,9 @@ class CardReady extends StatelessWidget {
   bool? rightBorder;
   bool? leftBorder;
   IconData setIcon;
+  VoidCallback? nextScreen;
   CardReady(
+    this.nextScreen,
     this.rightBorder,
     this.leftBorder, {
     super.key,
@@ -99,7 +116,7 @@ class CardReady extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: nextScreen,
       child: Container(
         decoration: BoxDecoration(
           border: Border(
@@ -130,3 +147,14 @@ class CardReady extends StatelessWidget {
     );
   }
 }
+
+void changeScreen(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => Morecategory(),
+    ),
+  );
+}
+
+void nothinHas() {}
