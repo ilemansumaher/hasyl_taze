@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class BottomScrollProduct extends StatelessWidget {
   String title;
   BottomScrollProduct({super.key, required this.title});
@@ -70,7 +70,6 @@ class ScrolImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 138,
-      padding: const EdgeInsets.all(14.0),
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.grey,
@@ -78,7 +77,7 @@ class ScrolImage extends StatelessWidget {
         borderRadius: BorderRadius.circular(8.0),
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
@@ -87,22 +86,40 @@ class ScrolImage extends StatelessWidget {
             ),
             child: SizedBox(
               width: 138,
-              child: Image.asset("assets/images/image_pro.jpg"),
+              height: 103,
+              child: Image.asset(
+                "assets/images/image_pro.jpg",
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-          const Spacer(),
-          const Text(
-            "Sahib Akira Sahib Pesticides Pvt ...",
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            maxLines: 2,
+          const Divider(
+            height: 0,
+            color: Colors.black54,
+            thickness: 0.5,
           ),
-          const Text(
-            "345 #",
-            style: TextStyle(
-              color: Colors.green,
-              fontSize: 18,
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              "Sahib Akira Sahib Pesticides Pvt ...",
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+              ),
+              maxLines: 2,
+              textAlign: TextAlign.start,
             ),
-          )
+          ),
+          const Padding(
+            padding: EdgeInsets.only(left: 8.0),
+            child: Text(
+              "345 #",
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 14,
+              ),
+            ),
+          ),
         ],
       ),
     );

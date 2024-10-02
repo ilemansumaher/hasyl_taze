@@ -12,7 +12,7 @@ class CategoryProcts extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            decoration:const BoxDecoration(
+            decoration: const BoxDecoration(
               border: Border(
                 top: BorderSide(color: Colors.black54),
                 left: BorderSide(color: Colors.black54),
@@ -26,10 +26,22 @@ class CategoryProcts extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CardReady(true, false),
-                CardReady(true, false),
-                CardReady(true, false),
-                CardReady(false, false),
+                CardReady(true, false, setIcon: Icons.alarm_add),
+                CardReady(
+                  true,
+                  false,
+                  setIcon: Icons.alarm_add,
+                ),
+                CardReady(
+                  true,
+                  false,
+                  setIcon: Icons.alarm_add,
+                ),
+                CardReady(
+                  false,
+                  false,
+                  setIcon: Icons.alarm_add,
+                ),
               ],
             ),
           ),
@@ -46,10 +58,23 @@ class CategoryProcts extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CardReady(true, false),
-                CardReady(true, false),
-                CardReady(true, false),
-                CardReady(false, false),
+                CardReady(
+                  true,
+                  false,
+                  setIcon: Icons.abc,
+                ),
+                CardReady(
+                  true,
+                  false,
+                  setIcon: Icons.ac_unit_sharp,
+                ),
+                CardReady(
+                  true,
+                  false,
+                  setIcon: Icons.ac_unit_sharp,
+                ),
+                CardReady(false, false,
+                    setIcon: Icons.arrow_circle_right_rounded),
               ],
             ),
           ),
@@ -63,35 +88,44 @@ class CategoryProcts extends StatelessWidget {
 class CardReady extends StatelessWidget {
   bool? rightBorder;
   bool? leftBorder;
-  CardReady(this.rightBorder, this.leftBorder, {super.key});
+  IconData setIcon;
+  CardReady(
+    this.rightBorder,
+    this.leftBorder, {
+    super.key,
+    required this.setIcon,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        border: Border(
-          right: rightBorder == true
-              ? const BorderSide(color: Colors.black54)
-              : BorderSide.none,
-          left: leftBorder == true
-              ? const BorderSide(color: Colors.black54)
-              : BorderSide.none,
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border(
+            right: rightBorder == true
+                ? const BorderSide(color: Colors.black54)
+                : BorderSide.none,
+            left: leftBorder == true
+                ? const BorderSide(color: Colors.black54)
+                : BorderSide.none,
+          ),
         ),
-      ),
-      height: 90,
-      width: MediaQuery.of(context).size.width * 0.23,
-      child:const Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.construction_outlined,
-            size: 35.0,
-          ),
-          Text(
-            "Salam",
-          ),
-        ],
+        height: 90,
+        width: MediaQuery.of(context).size.width * 0.23,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(
+              setIcon,
+              size: 35.0,
+            ),
+            Text(
+              "Salam",
+            ),
+          ],
+        ),
       ),
     );
   }
