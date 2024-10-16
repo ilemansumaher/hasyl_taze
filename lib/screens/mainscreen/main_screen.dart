@@ -35,11 +35,11 @@ class _MainScreenState extends State<MainScreen> {
             currentPageIndex = value;
           });
         },
-        children: const [
-          HomeScreen(),
-          SendCotton(),
-          SettingScreen(),
-          TaskScreen()
+        children: [
+          const HomeScreen(),
+          const SendCotton(),
+          const SettingScreen(),
+          TaskScreen(),
         ],
       ),
       bottomNavigationBar: NavigationBar(
